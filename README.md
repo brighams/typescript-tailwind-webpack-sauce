@@ -11,7 +11,7 @@ Usage:
 5. open browser http://127.0.0.1:8003
 
 There are no options. This is meant to be glued to your project, so the customizations will always show up, and you can reference how the project was started.
----
+----
 TODO: add a flag --no-smash-existing-files
 TODO: enable cloning this repo and have the script fix it up so that it becomes a new local repo with your folder name
 
@@ -28,6 +28,5 @@ npm build
 The landing page should look like this:
 ![README](README.png)
 
-
-=======
+----
 PULL REQUESTS ARE WELCOME!!!
