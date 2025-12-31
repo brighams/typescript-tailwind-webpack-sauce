@@ -41,4 +41,4 @@ app-sauce-XXXXXXX.sh
 Where XXXXXXX identifies the purpose of the file, such as:
 app-sauce-websockets.sh
 
-TODO: add flag to run buddy scripts for additional technology and support community given scripts.
+TODO: add a flag to run buddy scripts for additional technology and support community given scripts.
