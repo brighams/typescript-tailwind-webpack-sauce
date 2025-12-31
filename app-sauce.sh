@@ -228,63 +228,63 @@ cat > src/styles/index.css << 'EOL'
 @tailwind utilities;
 
 body {
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease;
 }
 
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-audiowide;
-  }
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-audiowide;
+    }
 
-  h1 {
-    @apply text-3xl mb-6;
-  }
+    h1 {
+        @apply text-3xl mb-6;
+    }
 
-  h2 {
-    @apply text-2xl mb-4;
-  }
+    h2 {
+        @apply text-2xl mb-4;
+    }
 
-  h3 {
-    @apply text-xl mb-3;
-  }
+    h3 {
+        @apply text-xl mb-3;
+    }
 
-  p {
-    @apply font-roboto mb-4;
-  }
+    p {
+        @apply font-roboto mb-4;
+    }
 
-  label {
-    @apply font-comfortaa;
-  }
+    label {
+        @apply font-comfortaa;
+    }
 
-  button, a.btn {
-    @apply font-comfortaa;
-  }
+    button, a.btn {
+        @apply font-comfortaa;
+    }
 }
 
 @layer components {
-  .btn-primary {
-    @apply px-4 py-2 bg-meadow-600 dark:bg-starry-600 text-white font-comfortaa rounded-md hover:bg-meadow-700 dark:hover:bg-starry-700 transition-colors;
-  }
+    .btn-primary {
+        @apply px-4 py-2 bg-meadow-600 dark:bg-starry-600 text-white font-comfortaa rounded-md hover:bg-meadow-700 dark:hover:bg-starry-700 transition-colors;
+    }
 
-  .btn-secondary {
-    @apply px-4 py-2 bg-white dark:bg-midnight-700 text-meadow-700 dark:text-starry-300 font-comfortaa border border-meadow-200 dark:border-midnight-500 rounded-md hover:bg-meadow-50 dark:hover:bg-midnight-600 transition-colors;
-  }
+    .btn-secondary {
+        @apply px-4 py-2 bg-white dark:bg-midnight-700 text-meadow-700 dark:text-starry-300 font-comfortaa border border-meadow-200 dark:border-midnight-500 rounded-md hover:bg-meadow-50 dark:hover:bg-midnight-600 transition-colors;
+    }
 
-  .card {
-    @apply bg-white dark:bg-midnight-800 rounded-lg p-6 shadow-lg dark:shadow-cosmic;
-  }
+    .card {
+        @apply bg-white dark:bg-midnight-800 rounded-lg p-6 shadow-lg dark:shadow-cosmic;
+    }
 
-  .gradient-card {
-    @apply bg-gradient-to-r from-sky-50 to-meadow-50 dark:from-midnight-800 dark:to-midnight-700 rounded-lg p-6 shadow-lg dark:shadow-cosmic;
-  }
+    .gradient-card {
+        @apply bg-gradient-to-r from-sky-50 to-meadow-50 dark:from-midnight-800 dark:to-midnight-700 rounded-lg p-6 shadow-lg dark:shadow-cosmic;
+    }
 
-  .form-input {
-    @apply w-full px-3 py-2 border border-meadow-200 dark:border-midnight-600 rounded-md focus:outline-none focus:ring-2 focus:ring-meadow-500 dark:focus:ring-starry-500 bg-white dark:bg-midnight-800 text-meadow-800 dark:text-starry-100;
-  }
+    .form-input {
+        @apply w-full px-3 py-2 border border-meadow-200 dark:border-midnight-600 rounded-md focus:outline-none focus:ring-2 focus:ring-meadow-500 dark:focus:ring-starry-500 bg-white dark:bg-midnight-800 text-meadow-800 dark:text-starry-100;
+    }
 }
 EOL
 
@@ -309,11 +309,66 @@ EOL
 echo "🚀🚀🚀    🪐App.tsx 🪐"
 cat > src/App.tsx << 'EOL'
 import React from 'react';
+import './styles/index.css';
 
 const App: React.FC = () => {
+  const openGitHub = () => {
+    window.open('https://github.com/brighams/StarTronAI', '_blank');
+  };
+
   return (
-    <div>
-      🚀🚀🚀    🪐App.tsx 🪐
+    <div className="min-h-screen w-full bg-gradient-to-br from-midnight-950 via-midnight-900 to-starry-950 dark:from-midnight-950 dark:via-midnight-900 dark:to-starry-950 flex flex-col items-center justify-center relative overflow-hidden">
+      {/* Spinning Gear Button - Upper Right */}
+      <button
+        onClick={openGitHub}
+        className="absolute top-8 right-8 z-50 p-4 rounded-full bg-purple-600 hover:bg-purple-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
+        title="Visit GitHub Repository"
+      >
+        <svg
+          className="w-8 h-8 text-white animate-spin"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <g transform="translate(12, 12)">
+            <circle cx="0" cy="-7" r="1.5" fill="currentColor" />
+            <circle cx="6" cy="-3.5" r="1.5" fill="currentColor" />
+            <circle cx="6" cy="3.5" r="1.5" fill="currentColor" />
+            <circle cx="0" cy="7" r="1.5" fill="currentColor" />
+            <circle cx="-6" cy="3.5" r="1.5" fill="currentColor" />
+            <circle cx="-6" cy="-3.5" r="1.5" fill="currentColor" />
+          </g>
+        </svg>
+      </button>
+
+      {/* Main Content */}
+      <div className="text-center px-8 max-w-3xl">
+        <h1 className="font-audiowide text-7xl md:text-8xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 drop-shadow-lg animate-pulse">
+          StarTronAI
+        </h1>
+
+        <p className="font-audiowide text-3xl md:text-4xl text-purple-300 mb-8 drop-shadow-lg">
+          ✨ Welcome to your next-generation app! ✨
+        </p>
+
+        <div className="font-roboto text-xl md:text-2xl text-purple-200 space-y-4 mb-12">
+          <p className="leading-relaxed">
+            🚀 Powered by cutting-edge technology and stellar design
+          </p>
+          <p className="text-purple-300">
+            Feel free to send pull requests to <span className="font-bold text-pink-400">StarTronAI</span>
+          </p>
+        </div>
+      </div>
+
+      {/* Decorative stars background */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        <div className="absolute top-20 left-10 text-4xl animate-pulse">✨</div>
+        <div className="absolute top-40 right-20 text-5xl animate-pulse" style={{animationDelay: '0.5s'}}>⭐</div>
+        <div className="absolute bottom-32 left-1/4 text-4xl animate-pulse" style={{animationDelay: '1s'}}>✨</div>
+        <div className="absolute bottom-20 right-1/3 text-5xl animate-pulse" style={{animationDelay: '1.5s'}}>⭐</div>
+      </div>
     </div>
   );
 };
@@ -335,9 +390,6 @@ module.exports = {
     extend: {
       fontFamily: {
         audiowide: ['Audiowide', 'cursive'],
-        comfortaa: ['Comfortaa', 'sans-serif'],
-        roboto: ['"Roboto Serif"', 'serif'],
-        emoji: ['"Noto Color Emoji"', 'sans-serif'],
       },
       colors: {
         // Midnight Van Gogh Theme (Dark)
@@ -451,393 +503,7 @@ module.exports = {
   ],
 }
 EOL
-echo "🚀🚀🚀    🪐ThemeContext.tsx 🪐"
-cat > src/components/themes/ThemeContext.tsx << 'EOL'
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-type Theme = 'midnight-van-gough' | 'sunlit-meadow';
-
-interface ThemeContextType {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Get theme from local storage or use default
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    return savedTheme || 'midnight-van-gough';
-  });
-
-  useEffect(() => {
-    // Save theme to local storage when it changes
-    localStorage.setItem('theme', theme);
-
-    // Apply theme classes to document
-    const root = window.document.documentElement;
-
-    if (theme === 'midnight-van-gough') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-  }, [theme]);
-
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
-
-export const useTheme = (): ThemeContextType => {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-};
-EOL
-echo "🚀🚀🚀    🪐ThemeSwitcher.tsx 🪐"
-cat > src/components/themes/ThemeSwitcher.tsx << 'EOL'
-import React from 'react';
-import { useTheme } from './ThemeContext';
-
-export const ThemeSwitcher: React.FC = () => {
-  const { theme, setTheme } = useTheme();
-
-  const toggleTheme = () => {
-    setTheme(theme === 'midnight-van-gough' ? 'sunlit-meadow' : 'midnight-van-gough');
-  };
-
-  return (
-    <div className="flex items-center space-x-2">
-      <span className="font-comfortaa text-sm dark:text-starry-300 text-meadow-700">
-        {theme === 'midnight-van-gough' ? '🌙' : '☀️'}
-      </span>
-      <label className="relative inline-flex items-center cursor-pointer">
-        <input
-          type="checkbox"
-          className="sr-only peer"
-          checked={theme === 'sunlit-meadow'}
-          onChange={toggleTheme}
-        />
-        <div className="w-11 h-6 bg-midnight-300 dark:bg-midnight-800 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white dark:after:bg-starry-400 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-sky-300"></div>
-      </label>
-      <span className="font-comfortaa text-sm dark:text-starry-300 text-meadow-700">
-        {theme === 'midnight-van-gough' ? 'Dark' : 'Light'}
-      </span>
-    </div>
-  );
-};
-EOL
-echo "🚀🚀🚀    🪐ThemePreview.tsx 🪐"
-cat > src/pages/ThemePreview.tsx << 'EOL'
-import React, { useState } from 'react';
-import { ThemeSwitcher } from '../components/themes/ThemeSwitcher';
-
-const ThemePreview: React.FC = () => {
-  const [inputValue, setInputValue] = useState('');
-  const [textareaValue, setTextareaValue] = useState('');
-  const [sliderValue, setSliderValue] = useState(50);
-  const [checkboxValue, setCheckboxValue] = useState(false);
-  const [radioValue, setRadioValue] = useState('option1');
-  const [selectValue, setSelectValue] = useState('option1');
-
-  return (
-    <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-sky-50 to-meadow-100 dark:bg-gradient-to-br dark:from-midnight-950 dark:to-midnight-900">
-      <div className="container mx-auto px-4 py-10">
-        <header className="mb-10 flex justify-between items-center">
-          <h1 className="font-audiowide text-4xl text-meadow-700 dark:text-starry-400">
-            StarPlayer Theme Preview
-          </h1>
-          <ThemeSwitcher />
-        </header>
-
-        <section className="mb-10">
-          <h2 className="font-audiowide text-2xl mb-4 text-meadow-800 dark:text-starry-300">Typography</h2>
-
-          <div className="space-y-4 mb-6">
-            <h1 className="font-audiowide text-3xl text-meadow-800 dark:text-starry-400">Heading 1 (Audiowide)</h1>
-            <h2 className="font-audiowide text-2xl text-meadow-700 dark:text-starry-300">Heading 2 (Audiowide)</h2>
-            <h3 className="font-audiowide text-xl text-meadow-600 dark:text-starry-200">Heading 3 (Audiowide)</h3>
-
-            <p className="font-comfortaa text-lg text-meadow-700 dark:text-starry-300">UI Label Text (Comfortaa)</p>
-
-            <div className="font-roboto text-base text-meadow-800 dark:text-starry-100">
-              <p className="mb-2">This is regular text in Roboto Serif. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.</p>
-              <p>Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
-            </div>
-
-            <p className="font-emoji text-2xl">Emoji Font: 🚀 🎵 🎧 🎸 🎹 🎼 🎤 🎺 🪐 ✨</p>
-          </div>
-        </section>
-
-        <section className="mb-10">
-          <h2 className="font-audiowide text-2xl mb-6 text-meadow-800 dark:text-starry-300">Color Gradients</h2>
-
-          <h3 className="font-comfortaa text-xl mb-4 text-meadow-700 dark:text-starry-400">Dark Theme Gradients</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div className="bg-midnight-glow h-32 rounded-lg shadow-lg flex items-center justify-center">
-              <span className="font-comfortaa text-white">Midnight Glow</span>
-            </div>
-            <div className="bg-cosmic-aurora h-32 rounded-lg shadow-lg flex items-center justify-center">
-              <span className="font-comfortaa text-white">Cosmic Aurora</span>
-            </div>
-            <div className="bg-starry-night h-32 rounded-lg shadow-lg flex items-center justify-center">
-              <span className="font-comfortaa text-white">Starry Night</span>
-            </div>
-            <div className="bg-nebula-burst h-32 rounded-lg shadow-lg flex items-center justify-center">
-              <span className="font-comfortaa text-white">Nebula Burst</span>
-            </div>
-            <div className="bg-deep-space h-32 rounded-lg shadow-lg flex items-center justify-center">
-              <span className="font-comfortaa text-white">Deep Space</span>
-            </div>
-          </div>
-
-          <h3 className="font-comfortaa text-xl mb-4 text-meadow-700 dark:text-starry-400">Light Theme Gradients</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-morning-haze h-32 rounded-lg shadow-lg flex items-center justify-center">
-              <span className="font-comfortaa text-meadow-800">Morning Haze</span>
-            </div>
-            <div className="bg-sunlit-meadow h-32 rounded-lg shadow-lg flex items-center justify-center">
-              <span className="font-comfortaa text-meadow-800">Sunlit Meadow</span>
-            </div>
-            <div className="bg-golden-hour h-32 rounded-lg shadow-lg flex items-center justify-center">
-              <span className="font-comfortaa text-meadow-800">Golden Hour</span>
-            </div>
-            <div className="bg-spring-bloom h-32 rounded-lg shadow-lg flex items-center justify-center">
-              <span className="font-comfortaa text-meadow-800">Spring Bloom</span>
-            </div>
-            <div className="bg-sunset-glow h-32 rounded-lg shadow-lg flex items-center justify-center">
-              <span className="font-comfortaa text-meadow-800">Sunset Glow</span>
-            </div>
-          </div>
-        </section>
-
-        <section className="mb-10">
-          <h2 className="font-audiowide text-2xl mb-6 text-meadow-800 dark:text-starry-300">UI Components</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-              <h3 className="font-comfortaa text-xl mb-4 text-meadow-700 dark:text-starry-400">Cards</h3>
-              <div className="space-y-6">
-                <div className="bg-white dark:bg-midnight-800 rounded-lg p-6 shadow-lg dark:shadow-cosmic">
-                  <h4 className="font-audiowide text-lg mb-2 text-meadow-700 dark:text-starry-400">Basic Card</h4>
-                  <p className="font-roboto text-meadow-700 dark:text-starry-200">This is a simple card component with some text content.</p>
-                </div>
-
-                <div className="bg-gradient-to-r from-sky-50 to-meadow-50 dark:from-midnight-800 dark:to-midnight-700 rounded-lg p-6 shadow-lg dark:shadow-cosmic">
-                  <h4 className="font-audiowide text-lg mb-2 text-meadow-700 dark:text-starry-400">Gradient Card</h4>
-                  <p className="font-roboto text-meadow-700 dark:text-starry-200">This card has a subtle gradient background.</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-comfortaa text-xl mb-4 text-meadow-700 dark:text-starry-400">Buttons</h3>
-              <div className="space-y-4">
-                <div className="space-x-4">
-                  <button className="px-4 py-2 bg-meadow-600 dark:bg-starry-600 text-white font-comfortaa rounded-md hover:bg-meadow-700 dark:hover:bg-starry-700 transition">
-                    Primary Button
-                  </button>
-                  <button className="px-4 py-2 bg-white dark:bg-midnight-700 text-meadow-700 dark:text-starry-300 font-comfortaa border border-meadow-200 dark:border-midnight-500 rounded-md hover:bg-meadow-50 dark:hover:bg-midnight-600 transition">
-                    Secondary Button
-                  </button>
-                </div>
-
-                <div className="space-x-4">
-                  <button className="px-4 py-2 bg-cosmic-500 text-white font-comfortaa rounded-md hover:bg-cosmic-600 transition">
-                    Accent Button
-                  </button>
-                  <button className="px-4 py-2 bg-transparent text-meadow-600 dark:text-starry-400 font-comfortaa hover:underline transition">
-                    Text Button
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-comfortaa text-xl mb-4 text-meadow-700 dark:text-starry-400">Form Controls</h3>
-              <div className="space-y-4">
-                <div>
-                  <label className="block font-comfortaa text-sm text-meadow-700 dark:text-starry-300 mb-1">Input Field</label>
-                  <input
-                    type="text"
-                    value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
-                    className="w-full px-3 py-2 border border-meadow-200 dark:border-midnight-600 rounded-md focus:outline-none focus:ring-2 focus:ring-meadow-500 dark:focus:ring-starry-500 bg-white dark:bg-midnight-800 text-meadow-800 dark:text-starry-100"
-                    placeholder="Enter some text..."
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-comfortaa text-sm text-meadow-700 dark:text-starry-300 mb-1">Textarea</label>
-                  <textarea
-                    value={textareaValue}
-                    onChange={(e) => setTextareaValue(e.target.value)}
-                    className="w-full px-3 py-2 border border-meadow-200 dark:border-midnight-600 rounded-md focus:outline-none focus:ring-2 focus:ring-meadow-500 dark:focus:ring-starry-500 bg-white dark:bg-midnight-800 text-meadow-800 dark:text-starry-100"
-                    placeholder="Enter multiple lines of text..."
-                    rows={3}
-                  ></textarea>
-                </div>
-
-                <div>
-                  <label className="block font-comfortaa text-sm text-meadow-700 dark:text-starry-300 mb-1">Select</label>
-                  <select
-                    value={selectValue}
-                    onChange={(e) => setSelectValue(e.target.value)}
-                    className="w-full px-3 py-2 border border-meadow-200 dark:border-midnight-600 rounded-md focus:outline-none focus:ring-2 focus:ring-meadow-500 dark:focus:ring-starry-500 bg-white dark:bg-midnight-800 text-meadow-800 dark:text-starry-100"
-                  >
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-comfortaa text-xl mb-4 text-meadow-700 dark:text-starry-400">Other Controls</h3>
-              <div className="space-y-4">
-                <div>
-                  <label className="block font-comfortaa text-sm text-meadow-700 dark:text-starry-300 mb-1">Checkbox</label>
-                  <div className="flex items-center">
-                    <input
-                      type="checkbox"
-                      checked={checkboxValue}
-                      onChange={(e) => setCheckboxValue(e.target.checked)}
-                      className="w-5 h-5 text-meadow-600 dark:text-starry-600 border-meadow-300 dark:border-midnight-500 rounded focus:ring-meadow-500 dark:focus:ring-starry-500 bg-white dark:bg-midnight-800"
-                    />
-                    <span className="ml-2 font-roboto text-meadow-700 dark:text-starry-300">
-                      I agree to the terms
-                    </span>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block font-comfortaa text-sm text-meadow-700 dark:text-starry-300 mb-1">Radio Buttons</label>
-                  <div className="space-y-2">
-                    <div className="flex items-center">
-                      <input
-                        type="radio"
-                        name="radio-option"
-                        value="option1"
-                        checked={radioValue === 'option1'}
-                        onChange={(e) => setRadioValue(e.target.value)}
-                        className="w-5 h-5 text-meadow-600 dark:text-starry-600 border-meadow-300 dark:border-midnight-500 focus:ring-meadow-500 dark:focus:ring-starry-500 bg-white dark:bg-midnight-800"
-                      />
-                      <span className="ml-2 font-roboto text-meadow-700 dark:text-starry-300">
-                        Option 1
-                      </span>
-                    </div>
-                    <div className="flex items-center">
-                      <input
-                        type="radio"
-                        name="radio-option"
-                        value="option2"
-                        checked={radioValue === 'option2'}
-                        onChange={(e) => setRadioValue(e.target.value)}
-                        className="w-5 h-5 text-meadow-600 dark:text-starry-600 border-meadow-300 dark:border-midnight-500 focus:ring-meadow-500 dark:focus:ring-starry-500 bg-white dark:bg-midnight-800"
-                      />
-                      <span className="ml-2 font-roboto text-meadow-700 dark:text-starry-300">
-                        Option 2
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block font-comfortaa text-sm text-meadow-700 dark:text-starry-300 mb-1">
-                    Slider ({sliderValue})
-                  </label>
-                  <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={sliderValue}
-                    onChange={(e) => setSliderValue(parseInt(e.target.value))}
-                    className="w-full h-2 bg-meadow-200 dark:bg-midnight-600 rounded-lg appearance-none cursor-pointer accent-meadow-600 dark:accent-starry-500"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mb-10">
-          <h2 className="font-audiowide text-2xl mb-6 text-meadow-800 dark:text-starry-300">Color Swatches</h2>
-
-          <h3 className="font-comfortaa text-xl mb-4 text-meadow-700 dark:text-starry-400">Midnight Theme Colors</h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-            {[950, 900, 800, 700, 600, 500, 400, 300, 200, 100, 50].map((shade) => (
-              <div key={`midnight-${shade}`} className={`bg-midnight-${shade} h-16 rounded-lg flex items-center justify-center`}>
-                <span className={`font-comfortaa ${shade > 500 ? 'text-white' : 'text-midnight-950'}`}>
-                  midnight-{shade}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-            {[950, 900, 800, 700, 600, 500, 400, 300, 200, 100, 50].map((shade) => (
-              <div key={`starry-${shade}`} className={`bg-starry-${shade} h-16 rounded-lg flex items-center justify-center`}>
-                <span className={`font-comfortaa ${shade > 500 ? 'text-white' : 'text-starry-950'}`}>
-                  starry-{shade}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-            {[950, 900, 800, 700, 600, 500, 400, 300, 200, 100, 50].map((shade) => (
-              <div key={`cosmic-${shade}`} className={`bg-cosmic-${shade} h-16 rounded-lg flex items-center justify-center`}>
-                <span className={`font-comfortaa ${shade > 500 ? 'text-white' : 'text-cosmic-950'}`}>
-                  cosmic-{shade}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <h3 className="font-comfortaa text-xl mb-4 text-meadow-700 dark:text-starry-400">Meadow Theme Colors</h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-            {[950, 900, 800, 700, 600, 500, 400, 300, 200, 100, 50].map((shade) => (
-              <div key={`meadow-${shade}`} className={`bg-meadow-${shade} h-16 rounded-lg flex items-center justify-center`}>
-                <span className={`font-comfortaa ${shade > 500 ? 'text-white' : 'text-meadow-950'}`}>
-                  meadow-{shade}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-            {[950, 900, 800, 700, 600, 500, 400, 300, 200, 100, 50].map((shade) => (
-              <div key={`sky-${shade}`} className={`bg-sky-${shade} h-16 rounded-lg flex items-center justify-center`}>
-                <span className={`font-comfortaa ${shade > 500 ? 'text-white' : 'text-sky-950'}`}>
-                  sky-{shade}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {[950, 900, 800, 700, 600, 500, 400, 300, 200, 100, 50].map((shade) => (
-              <div key={`sunshine-${shade}`} className={`bg-sunshine-${shade} h-16 rounded-lg flex items-center justify-center`}>
-                <span className={`font-comfortaa ${shade > 500 ? 'text-white' : 'text-sunshine-950'}`}>
-                  sunshine-{shade}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
-    </div>
-  );
-};
-
-export default ThemePreview;
 EOL
 echo "🚀🚀🚀    🪐Setting up package.json scripts 🪐"
 npm pkg set scripts.start="webpack serve --config webpack/webpack.dev.js"
