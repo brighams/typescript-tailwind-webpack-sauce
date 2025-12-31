@@ -12,12 +12,6 @@ Usage:
 
 There are no options. This is meant to be glued to your project, so the customizations will always show up, and you can reference how the project was started.
 ----
-TODO: add a flag --no-smash-existing-files
-
-TODO: enable cloning this repo and have the script fix it up so that it becomes a new local repo with your folder name
-
-TODO: add a version that includes electron
-----
 WARNING: this will freely smash pre-existing files in your workspace.
 THIS is a feature: you may freely update the script and re-run, until you feel like it is ready to go for your project.
 ----
@@ -40,5 +34,13 @@ app-sauce-XXXXXXX.sh
 
 Where XXXXXXX identifies the purpose of the file, such as:
 app-sauce-websockets.sh
+----
+TODO: add a flag --no-smash-existing-files
+
+TODO: enable cloning this repo and have the script fix it up so that it becomes a new local repo with your folder name
+
+TODO: add a version that includes electron
 
 TODO: add a flag to run buddy scripts for additional technology and support community given scripts.
+
+TODO: update themes to actually use them properly!!!
