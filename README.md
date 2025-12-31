@@ -3,7 +3,7 @@ A custom script that builds a fullly functional workspace
 
 Usage:
 
-1. Open bash shell on windows - linux skip this step!
+1. Open a bash shell on windows - linux skip this step!
 1. Copy app-sauce.sh to the root of your project foler
 2. customize the script as you like
 3. execute ./app-sauch.sh
