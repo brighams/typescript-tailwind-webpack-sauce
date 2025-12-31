@@ -10,12 +10,15 @@ Usage:
 4. It will compile and run!
 5. open browser http://127.0.0.1:8003
 
+There are no options. This is meant to be glued to your project, so the customizations will always show up, and you can reference how the project was started.
+---
+TODO: add a flag --no-smash-existing-files
+TODO: enable cloning this repo and have the script fix it up so that it becomes a new local repo with your folder name
+
 ----
 WARNING: this will freely smash pre-existing files in your workspace.
 THIS is a feature: you may freely update the script and re-run, until you feel like it is ready to go for your project.
-TODO: add a flag --no-smash-existing-files
 ----
-there are no options. This is meant to be glued to your project, so the customizations will always show up, and you can reference how the project was started.
 
 Uses normal npm commands to execute app:
 
