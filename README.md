@@ -13,6 +13,7 @@ Usage:
 There are no options. This is meant to be glued to your project, so the customizations will always show up, and you can reference how the project was started.
 ----
 TODO: add a flag --no-smash-existing-files
+
 TODO: enable cloning this repo and have the script fix it up so that it becomes a new local repo with your folder name
 
 ----
