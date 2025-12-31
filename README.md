@@ -22,7 +22,7 @@ npm start
 
 npm run build
 
-The landing page should look like this:
+The landing page should look something like this:
 ![README](README.png)
 
 ----
