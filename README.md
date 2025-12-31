@@ -16,6 +16,7 @@ TODO: add a flag --no-smash-existing-files
 
 TODO: enable cloning this repo and have the script fix it up so that it becomes a new local repo with your folder name
 
+TODO: add a version that includes electron
 ----
 WARNING: this will freely smash pre-existing files in your workspace.
 THIS is a feature: you may freely update the script and re-run, until you feel like it is ready to go for your project.
