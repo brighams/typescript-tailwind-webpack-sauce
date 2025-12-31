@@ -12,6 +12,8 @@ Usage:
 
 ----
 WARNING: this will freely smash pre-existing files in your workspace.
+THIS is a feature: you may freely update the script and re-run it, until you feel like it is ready to go for your project.
+TODO: add a flag --no-smash-existing-files
 ----
 there are no options and this is meant to be glued to the project so the customizations will always show up and you can reference how the project was started.
 
