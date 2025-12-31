@@ -24,6 +24,7 @@ THIS is a feature: you may freely update the script and re-run, until you feel l
 Uses normal npm commands to execute app:
 
 npm start
+
 npm build
 
 The landing page should look like this:
