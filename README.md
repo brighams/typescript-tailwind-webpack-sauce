@@ -22,11 +22,11 @@ WARNING: this will freely smash pre-existing files in your workspace.
 THIS is a feature: you may freely update the script and re-run, until you feel like it is ready to go for your project.
 ----
 
-Uses normal npm commands to execute app:
+Uses normal npm commands to execute & build:
 
 npm start
 
-npm build
+npm run build
 
 The landing page should look like this:
 ![README](README.png)
