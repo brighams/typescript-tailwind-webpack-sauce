@@ -33,3 +33,12 @@ The landing page should look like this:
 
 ----
 PULL REQUESTS ARE WELCOME!!!
+
+If you wish to add additional files or packages and share them with a pull request, please duplicate app-sauce.sh, add a file called:
+
+app-sauce-XXXXXXX.sh
+
+Where XXXXXXX identifies the purpose of the file, such as:
+app-sauce-websockets.sh
+
+TODO: add flag to run buddy scripts for additional technology and support community given scripts.
