@@ -14,6 +14,8 @@ Usage:
 4. It will compile and run!
 5. open browser http://127.0.0.1:8003
 
+The default port is 8003 so that it does not conflict with most development mode React servers default port because I run a lot of local services :)
+
 There are no options. This is meant to be glued to your project, so the customizations will always show up, and you can reference how the project was started.
 ----
 WARNING: this will freely smash pre-existing files in your workspace.
