@@ -1,4 +1,4 @@
-# typescript-tailwind-webpack-sauce
+# app-sauce.sh
 A custom script that builds a fullly functional workspace
 
 Usage:
