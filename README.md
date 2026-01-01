@@ -1,14 +1,20 @@
-# typescript-tailwind-webpack-sauce
-A custom script that builds a fullly functional workspace
+# app-sauce.sh
+A custom single file script that builds a fullly functional workspace that includes TypeScript, Tailwindcss, and Webpack.
+
+Cross platform, as long as you can get a bash shell runing!!! 
+
+For windows be sure to install the Git Bash shell.
 
 Usage:
 
-1. Open a bash shell on windows - linux skip this step!
+1. Open a bash shell on windows - linux skip this step, you have your proper command-line shell!!
 1. Copy app-sauce.sh to the root of your project folder
 2. customize the script as you like
 3. execute ./app-sauce.sh
 4. It will compile and run!
 5. open browser http://127.0.0.1:8003
+
+The default port is 8003 so that it does not conflict with most development mode React servers default port because I run a lot of local services :)
 
 There are no options. This is meant to be glued to your project, so the customizations will always show up, and you can reference how the project was started.
 ----
