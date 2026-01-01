@@ -44,3 +44,5 @@ TODO: add a version that includes electron
 TODO: add a flag to run buddy scripts for additional technology and support community given scripts.
 
 TODO: update themes to actually use them properly!!!
+
+TODO: create build to assemble the app-sauce.sh file from source files -> improve workflow of this
