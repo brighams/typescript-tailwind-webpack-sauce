@@ -1,5 +1,7 @@
 # app-sauce.sh
-A custom script that builds a fullly functional workspace that includes TypeScript, Tailwindcss, and Webpack.
+A custom single file script that builds a fullly functional workspace that includes TypeScript, Tailwindcss, and Webpack.
+
+Cross platform, as long as you can get a bash shell runing. Windows git-bash is great.
 
 Usage:
 
