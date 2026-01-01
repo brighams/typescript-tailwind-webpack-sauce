@@ -1,5 +1,5 @@
 # app-sauce.sh
-A custom script that builds a fullly functional workspace
+A custom script that builds a fullly functional workspace that includes TypeScript, Tailwindcss, and Webpack.
 
 Usage:
 
