@@ -7,7 +7,7 @@ For windows be sure to install the Git Bash shell.
 
 Usage:
 
-1. Open a bash shell on windows - linux skip this step!
+1. Open a bash shell on windows - linux skip this step, you have your proper command-line shell!!
 1. Copy app-sauce.sh to the root of your project folder
 2. customize the script as you like
 3. execute ./app-sauce.sh
